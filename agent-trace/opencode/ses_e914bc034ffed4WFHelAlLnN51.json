@@ -1,0 +1,105 @@
+{
+  "info": {
+    "id": "ses_e914bc034ffed4WFHelAlLnN51",
+    "projectID": "dbdbecb95f53aa134336c8a06aa13f81603ddb26",
+    "model": {
+      "id": "glm-5.3-flash-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "outcome": "failed",
+    "time": {
+      "created": 1792858669125,
+      "updated": 1792858671088,
+      "idle": 1792858671091
+    },
+    "title": "[redacted:session-title:ses_e914bc034ffed4WFHelAlLnN51]",
+    "permissions": [
+      {
+        "action": "*",
+        "resource": "*",
+        "effect": "allow"
+      },
+      {
+        "action": "t3-code-*",
+        "resource": "*",
+        "effect": "deny"
+      },
+      {
+        "action": "t3-code-982aea01a88ba3be_*",
+        "resource": "*",
+        "effect": "allow"
+      }
+    ],
+    "location": {
+      "directory": "/[redacted:session-directory:ses_e914bc034ffed4WFHelAlLnN51]"
+    }
+  },
+  "messages": [
+    {
+      "id": "msg_t3_turn_ses_e914bc034ffed4WFHelAlLnN51:run-attempt:run:run%3Athread%3Athread%253Adelegated-task%253Acommand%25253Amcp%25253Abb5bc828-283c-4f79-87a0-57af0ec6800a%25253Adelegate-task%25253Aghostwatch-t01-parent-review-glm-r1%3Aordinal%3A1:attempt:1",
+      "time": {
+        "created": 1792858670242
+      },
+      "text": "[redacted:text:msg_t3_turn_ses_e914bc034ffed4WFHelAlLnN51:run-attempt:run:run%3Athread%3Athread%253Adelegated-task%253Acommand%25253Amcp%25253Abb5bc828-283c-4f79-87a0-57af0ec6800a%25253Adelegate-task%25253Aghostwatch-t01-parent-review-glm-r1%3Aordinal%3A1:attempt:1]",
+      "type": "user"
+    },
+    {
+      "id": "msg_16eb444a8001cXEBX4fflzYKRP",
+      "time": {
+        "created": 1792858670259,
+        "completed": 1792858671088
+      },
+      "type": "assistant",
+      "agent": "build",
+      "model": {
+        "id": "glm-5.3-flash-free",
+        "providerID": "opencode",
+        "variant": "default"
+      },
+      "content": [],
+      "snapshot": {
+        "start": "087a5a8859527a4eb6f3a6a5ae1918fc316b240d",
+        "end": "087a5a8859527a4eb6f3a6a5ae1918fc316b240d",
+        "files": []
+      },
+      "finish": "error",
+      "error": {
+        "type": "provider.free-limit",
+        "message": "Free usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.",
+        "status": 429,
+        "response": {
+          "body": "{\"type\":\"error\",\"error\":{\"type\":\"FreeUsageLimitError\",\"message\":\"Free usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go\"}}"
+        },
+        "retryAfterMs": 27730000
+      }
+    },
+    {
+      "id": "msg_16eb447f2001LeEEv4mT87I12q",
+      "time": {
+        "created": 1792858671091
+      },
+      "type": "idle",
+      "outcome": "failed",
+      "error": {
+        "type": "provider.free-limit",
+        "message": "Free usage limit reached. Connect a provider or subscribe to OpenCode Go to keep going, or switch models.",
+        "status": 429,
+        "response": {
+          "body": "{\"type\":\"error\",\"error\":{\"type\":\"FreeUsageLimitError\",\"message\":\"Free usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go\"}}"
+        },
+        "retryAfterMs": 27730000
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "info": {
+    "id": "ses_e91c9e34fffeJ8a7vjQCHMTgbP",
+    "projectID": "dbdbecb95f53aa134336c8a06aa13f81603ddb26",
+    "agent": "ghostwatch-readonly",
+    "model": {
+      "id": "deepseek-v4.1-flash-free",
+      "providerID": "opencode",
+      "variant": "default"
+    },
+    "cost": 0,
+    "tokens": {
+      "input": 0,
+      "output": 0,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "outcome": "failed",
+    "time": {
+      "created": 1792850402648,
+      "updated": 1792850402683,
+      "idle": 1792850402695
+    },
+    "subpath": "ghostwatch",
+    "location": {
+      "directory": "/[redacted:session-directory:ses_e91c9e34fffeJ8a7vjQCHMTgbP]"
+    }
+  },
+  "messages": [
+    {
+      "id": "msg_16e361d70001u55Sa7SAxgwhRO",
+      "time": {
+        "created": 1792850402672
+      },
+      "type": "agent-switched",
+      "agent": "ghostwatch-readonly",
+      "previous": "ghostwatch-readonly"
+    },
+    {
+      "id": "msg_16e361d87001Kswh7MSXp5Iq7S",
+      "time": {
+        "created": 1792850402695
+      },
+      "type": "idle",
+      "outcome": "failed",
+      "error": {
+        "type": "unknown",
+        "message": "Agent not found: \"ghostwatch-readonly\""
+      }
+    }
+  ]
+}
