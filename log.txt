@@ -2459,3 +2459,96 @@ branch=main
 repo_root=C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26
 worktree=main
 parent_agent=none
+
+
+## [2026-10-25T16:49:15+05:30] AI Judge interview research and preparation pack
+
+User Prompt (verbatim, secrets redacted):
+using the search tools like firwcrawl or context.dev or tavily via mcp or executor.sh installed find me the type of questions what will be asked in the interview question and give me the sol to them too to prepare the same
+
+Agent Response Summary:
+Researched the HackerRank Orchestrate AI Judge interview with the installed search stack (Context MCP: web-search, web-scrape, web-answers; no Tavily or Firecrawl app is installed). Pulled the official format and rubric from HackerRank's own blogs (30-minute voice interview, camera on; technical depth and ownership 40%, problem understanding and judgment 25%, communication clarity 20%, honesty and self-awareness 15%; overall submission weights interview 30%, output 30%, code 30%, transcript 10%) plus community-reported questions from a three-edition veteran guide and participant posts. Wrote docs/AI_INTERVIEW_PREP.md: opening-pitch and architecture-walkthrough scripts, about 45 interview questions with model answers grounded in this repository's code and measured numbers, judge curveballs, a numbers and files cheat sheet, delivery rules and a ten-minute mock drill. No source, test, data, report or archive file was modified; the new doc is left uncommitted pending direction.
+
+Actions:
+* Context MCP: tools.context[web-search], tools.context[web-scrape], tools.context[web-answers] on HackerRank blog posts, the Medium three-edition guide and participant reports
+* Tool discovery: no Tavily/Firecrawl app installed; used the available Context search stack
+* Wrote docs/AI_INTERVIEW_PREP.md (local, not committed)
+
+Context:
+tool=OpenCode
+model=modal/vedantmahajan271--ep-deepseek-v4-1-flash-server.us-west.modal.direct
+branch=main
+repo_root=C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none
+
+
+## [2026-10-25T23:41:45+05:30] Status accuracy on the 32 public samples
+
+User Prompt (verbatim, secrets redacted):
+WHAT IS STATUST ACCRACY ON 32 SAMPLE
+
+Agent Response Summary:
+Re-ran the public-sample evaluator (python code/evaluation/main.py --json) to confirm the number: case-status accuracy is 27/32 = 84.375% (84.4%). The five misses are case_01, case_02 and case_04 (label COMPLETE, predicted INCOMPLETE because the samples have no grounded evidence, so the audit fails closed) and case_10/case_12 (label INCOMPLETE, predicted COMPLETE due to the disclosed shared-context vs sole-ownership rule-condition divergence).
+
+Actions:
+* Ran python code/evaluation/main.py --json -> status_correct 27, cases 32 (also field 523/792, evidence 54/75, FN 56, FP 7)
+* Cross-checked code/evaluation/evaluation_report.md line 70: 'Case-status accuracy | 27/32 | 84.4%'
+
+Context:
+tool=OpenCode
+model=modal/vedantmahajan271--ep-deepseek-v4-1-flash-server.us-west.modal.direct
+branch=main
+repo_root=C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none
+
+
+## [2026-10-25T23:48:59+05:30] Agent traces packaged as agent-trace.zip
+
+User Prompt (verbatim, secrets redacted):
+Upload your agent traces
+One last step. Upload your agent traces as a ZIP file to complete your submission.
+
+give me this
+
+Agent Response Summary:
+Located the challenge's OpenCode sessions (43 top-level sessions for this checkout: T00 setup, T01-T04 workers, every independent review and fix round) and exported each one with `opencode session export <id> --sanitize` into agent-trace/opencode/. Added the repository chat transcript (log.txt), a machine-readable sessions index and a README map. Ran a credential-pattern scan over all staged files (0 hits), then built agent-trace.zip with the agent-trace/ folder preserved. The zip contains 43 session JSON exports, log.txt, sessions-index.json and README.md; no auth.json, settings, credentials or unrelated sessions.
+
+Actions:
+* Listed sessions: opencode session list --format json -> 43 sessions in the challenge checkout
+* Exported: opencode session export <id> --sanitize -> agent-trace/opencode/<id>.json (43 files, 4,398 messages, 8.5 MB)
+* Copied log.txt and wrote sessions-index.json + README.md
+* Secret scan: openai_sk/github_pat/aws_akia/private_key/slack/jwt/bearer/anthropic -> 0 hits
+* Built and verified C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26/agent-trace.zip (700 KB; testzip clean)
+
+Context:
+tool=OpenCode
+model=modal/vedantmahajan271--ep-deepseek-v4-1-flash-server.us-west.modal.direct
+branch=main
+repo_root=C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none
+
+
+## [2026-10-25T23:51:11+05:30] Repository publication: interview prep, sample metrics and agent traces
+
+User Prompt (verbatim, secrets redacted):
+commit and push
+
+Agent Response Summary:
+Committed the pending non-code work in three ordered commits: the AI Judge interview preparation pack (docs/AI_INTERVIEW_PREP.md), the sanitized OpenCode agent traces with the upload archive (agent-trace/ plus agent-trace.zip, 43 sessions), and the updated root chat transcript (log.txt). Rebuilt agent-trace.zip after appending this entry so the archive's transcript is current and refreshed the Desktop copy, then pushed main to origin. No source, tests, dataset, reports or accepted release artifacts were changed.
+
+Actions:
+* Appended this entry to log.txt and ghostwatch/runs/LOG.md
+* Refreshed agent-trace/opencode/log.txt and rebuilt agent-trace.zip (secret scan clean)
+* git commit: docs(interview) ... / chore(traces) ... / docs(log) ...
+* git push origin main
+
+Context:
+tool=OpenCode
+model=modal/vedantmahajan271--ep-deepseek-v4-1-flash-server.us-west.modal.direct
+branch=main
+repo_root=C:/Users/vedan/Documents/Resources/Code/hackerrank-orchestrate-october26
+worktree=main
+parent_agent=none
