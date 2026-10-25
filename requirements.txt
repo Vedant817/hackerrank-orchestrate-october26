@@ -1,0 +1,40 @@
+# Ghost Data Still Exists - runtime and test dependencies.
+#
+# Layout: the solution lives in `code/`, the participant inputs in `dataset/`, and the
+# completed `output.csv` is written at the repository root.
+#
+# Python 3.10+ is required (the code uses `X | None` annotations and `dataclass(slots=True)`).
+#
+# Install:
+#   python -m pip install -r requirements.txt
+#
+# The T01 ingestion layer needs the standard library plus the two extraction dependencies
+# below. If `pypdf` or `Pillow` is missing, PDF or screenshot evidence fails with a clearly
+# named install hint instead of being skipped, so the audit never silently ignores a file.
+
+# --- required for the ingestion / evidence layer -----------------------------------------
+
+# PDF text extraction for `dataset/evidence/documents/*.pdf`.
+pypdf>=5.0
+
+# Image container decoding for `dataset/evidence/images/*.png`.
+Pillow>=10.0
+
+# --- test tooling ------------------------------------------------------------------------
+
+pytest>=8.0
+
+# Linting (`python -m ruff check code`).
+ruff>=0.6
+
+# --- optional OCR backend for screenshots -------------------------------------------------
+#
+# On Windows 10/11 the screenshots are read through the built-in `Windows.Media.Ocr` engine
+# driven by PowerShell, so no extra package is needed. Elsewhere, install `pytesseract`
+# together with a `tesseract` binary, or set `TESSERACT_CMD` to point at it:
+#
+#   pip install pytesseract
+#   winget install UB-Mannheim.TesseractOCR      # Windows
+#   apt-get install tesseract-ocr                # Debian / Ubuntu
+#
+# pytesseract
